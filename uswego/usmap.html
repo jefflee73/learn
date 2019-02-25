@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>usmap.js test</title>
+    <style type="text/css">
+        body {
+            background-color: #f3f3f3;
+            color: #272D33;
+            font-size: 16px;
+            line-height: 20px;
+            margin: 20px;
+        }
+
+        h1 {
+            font-size: 1.75em;
+        }
+
+        h1, h2 {
+            font-family: "Ostrich Sans Black", Arial, sans-serif;
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: 1.75em;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.75);
+            margin-bottom: 1em;
+        }
+
+        #selected-state {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+            #selected-state > span {
+                font-style: normal;
+                font-size: 0.75em;
+            }
+
+        #map {
+            width: 700px;
+            height: 450px;
+            ;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script src="https://rawgit.com/NewSignature/us-map/master/jquery.usmap.js"></script>
+    <script src="https://rawgit.com/NewSignature/us-map/master/example/color.jquery.js"></script>
+</head>
+<body>
+    <div id="selected-state">Which state is that? <span>Hover over it to find out.</span></div>
+    <div id="map"></div>
+    <script>
+        /* 
+        Forked from: https://github.com/NewSignature/us-map
+        Instructions for use at: https://newsignature.github.io/us-map/ 
+        */
+
+        $(document).ready(function () {
+
+            $('#map').usmap({
+                stateStyles: { fill: '#CA6F1E' },
+                stateHoverStyles: { fill: '#DAF7A6' },
+                showLabels: true,
+                labelBackingStyles: { fill: '#CA6F1E' },
+                labelBackingHoverStyles: { fill: '#DAF7A6' },
+                labelWidth: 36,
+                labelHeight: 30,
+                mouseover: function (event, data) {
+                    $('#selected-state > span').text(data.name).css({ "font-weight": "bold", "color": "#FF6E6E" });
+                },
+                mouseout: function (event, data) {
+                    $('#selected-state > span').text('Hover over it to find out').css({ "font-weight": "normal", "color": "#272D33" });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
