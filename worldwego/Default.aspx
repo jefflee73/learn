@@ -91,6 +91,30 @@
             text-align:left;
         }
 
+        h3.neighbors {
+            margin: 5px 0px;
+            line-height: 150%;
+        }
+        table.neighbors {
+            width: 100%;
+            margin-left: 2em;
+        }
+        table.neighbors tr th {
+            text-align: left;
+        }
+        table.neighbors tr th:nth-of-type(1) {
+            width: 40%;
+        }
+        table.neighbors tr th:nth-of-type(2) {
+            width: 60%;
+        }
+        
+        table.condense {
+            font-size:smaller;
+            border-spacing: 0;
+            line-height: 18px;
+        }
+
         .hideThis {
             display: none;
         }
@@ -144,6 +168,17 @@
             width: 480px;
             height: 310px;
             float: left;
+        }
+
+        #letterKeys {
+            font-family:Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin: 1ex 0;
+            color:darkblue;
+        }
+        #letterKeys span:hover {
+            color:orangered;
+            font-style:italic;
         }
 
         #txtCountry {
@@ -283,7 +318,34 @@
                     </div>
                     <div class="clear"></div>
                     <div id="selected-state">Is in what country? <span></span></div>
-                    <br />
+                    <div id="letterKeys">
+                        <span onclick="$('#txtCountry').autocomplete('search', 'a');">A</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'b');">B</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'c');">C</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'd');">D</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'e');">E</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'f');">F</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'g');">G</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'h');">H</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'i');">I</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'j');">J</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'k');">K</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'l');">L</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'm');">M</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'n');">N</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'o');">O</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'p');">P</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'q');">Q</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'r');">R</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 's');">S</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 't');">T</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'u');">U</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'v');">V</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'w');">W</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'x');">X</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'y');">Y</span> 
+                        <span onclick="$('#txtCountry').autocomplete('search', 'z');">Z</span> 
+                    </div>
                     Country Name:
                 <asp:TextBox ID="txtCountry" runat="server" OnTextChanged="AnswerButton_Click"></asp:TextBox>
                 </div>
@@ -324,6 +386,9 @@
                 }
             });
         });
+
+        //force autocomplete search
+        //$('#txtCountry').autocomplete("search", "s");
 
         function confirmation() {
             return confirm("Leave this game?");

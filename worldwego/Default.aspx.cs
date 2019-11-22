@@ -11,7 +11,7 @@ public partial class _Default : System.Web.UI.Page
     protected int answerBaseScore = 100;
     protected int answerIncrement = 5;
     protected int lifelineCost = 20;
-    protected int lifelineCount = 14;
+    protected int lifelineCount = 16;
     public string zoomTitle;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -298,6 +298,26 @@ public partial class _Default : System.Web.UI.Page
                 llicon.ImageUrl = "images/icons/resources.png";
                 llicon.AlternateText = "Natural resources and crops";
                 llicon.ToolTip = "Natural resources and crops";
+                break;
+            case 15:     //National capital
+                litLifeline.Text = "<h3>The national capital is <span class='datum'>" + drData["capital"].ToString() + "</span></h3>";
+                llicon.ImageUrl = "images/icons/capital.png";
+                llicon.AlternateText = "National capital";
+                llicon.ToolTip = "National capital";
+                break;
+            case 16:     //Neighboring countries
+                dt = geography.GetWWNeighbors(drData["a2"].ToString());
+                string tblClass = (dt.Rows.Count > 10) ? "neighbors condense" : "neighbors";
+                litLifeline.Text = "<h3 class='neighbors'>Neighboring countries are</h3>";
+                litLifeline.Text += "<table class='" + tblClass + "'><th>Country</th><th>Border Length</th></tr>";
+                foreach (DataRow dr in dt.Rows)
+                {
+                    litLifeline.Text += "<tr><td>" + dr["neighbor"].ToString() + "</td><td>" + dr["neighborborder"].ToString() + " km</td></tr>";
+                }
+                litLifeline.Text += "</table>";
+                llicon.ImageUrl = "images/icons/neighbors.png";
+                llicon.AlternateText = "Neighboring countries";
+                llicon.ToolTip = "Neighboring countries";
                 break;
             case 999: //Out of lifelines
                 litLifeline.Text = "<h3>You are out of lifelines for this destination.</h3>";
