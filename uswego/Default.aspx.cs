@@ -184,26 +184,26 @@ public partial class _Default : System.Web.UI.Page
                 llicon.ToolTip = "Latitude and longitude";
                 break;
             case 2:     //flag
-                strImage = "<img class=\"flag\" src=\"images/zzz.png\" alt=\"State Flag\" title=\"State Flag\" onclick=\"zoomBox()\" >";
+                strImage = "<img class=\"flag\" src=\"images/flags/zzz.png\" alt=\"State Flag\" title=\"State Flag\" onclick=\"zoomBox()\" >";
                 strImage = strImage.Replace("zzz", "x" + drData["abbr"].ToString().ToLower());
                 litLifeline.Text = strImage;
                 llicon.ImageUrl = "images/icons/flag.png";
                 llicon.AlternateText = "Flag";
                 llicon.ToolTip = "Flag";
                 zoomTitle = "State Flag";
-                litZoom.Text = "<img class=\"flag\" src=\"images/zzz.png\" alt=\"State Flag\" title=\"State Flag\">";
+                litZoom.Text = "<img class=\"flag\" src=\"images/flags/zzz.png\" alt=\"State Flag\" title=\"State Flag\">";
                 litZoom.Text = litZoom.Text.Replace("zzz", "x" + drData["abbr"].ToString().ToLower());
                 ScriptManager.RegisterClientScriptBlock(this, GetType(), "zoomBox", "zoomBox()", true);
                 break;
             case 3:     //quarter
-                strImage = "<img class=\"quarter\" src=\"images/zzz.png\" alt=\"State Quarter\" title=\"State Quarter\" onclick=\"zoomBox()\" >";
+                strImage = "<img class=\"quarter\" src=\"images/quarters/zzz.png\" alt=\"State Quarter\" title=\"State Quarter\" onclick=\"zoomBox()\" >";
                 strImage = strImage.Replace("zzz", "y" + drData["abbr"].ToString().ToLower());
                 litLifeline.Text = strImage;
                 llicon.ImageUrl = "images/icons/quarter.png";
                 llicon.AlternateText = "Quarter";
                 llicon.ToolTip = "Quarter";
                 zoomTitle = "State Quarter";
-                litZoom.Text = "<img class=\"quarter\" src=\"images/zzz.png\" alt=\"State Quarter\" title=\"State Quarter\">";
+                litZoom.Text = "<img class=\"quarter\" src=\"images/quarters/zzz.png\" alt=\"State Quarter\" title=\"State Quarter\">";
                 litZoom.Text = litZoom.Text.Replace("zzz", "y" + drData["abbr"].ToString().ToLower());
                 ScriptManager.RegisterClientScriptBlock(this, GetType(), "zoomBox", "zoomBox()", true);
                 break;

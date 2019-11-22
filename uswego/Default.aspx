@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>USWego &mdash; The U.S. Geography Game | Identify the State</title>
-    <link rel="stylesheet" href="/geobee/js/jquery-ui-1.12.1/jquery-ui.css" />
+    <link rel="stylesheet" href="/js/jquery-ui.css" />
     <style type="text/css">
         body {
             background-color: #f3f3f3;
@@ -197,7 +197,7 @@
     <script src="js/raphael-min.js"></script>
     <script src="js/jquery.usmap.js"></script>
     <script src="js/color.jquery.js"></script>
-    <script src="/geobee/js/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="/js/jquery-ui.js"></script>
     <script type="text/javascript">
         function zoomBox() {
             //alert('ztest');
