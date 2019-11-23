@@ -39,6 +39,17 @@
             margin-bottom: 10px;
             width: 900px;
         }
+
+        #playLeft, #playRight {
+            width:440px;
+            float:left;
+        }
+        #playLeft {
+        }
+        #playRight {
+            margin: 10px 0 0 40px;
+        }
+
         #playGame table {
             float: left;
         }
@@ -152,8 +163,7 @@
             border: solid thin #888;
             border-radius: 5px;
             background-color: #DDD;
-            float: right;
-            margin: -40px 40px 0 0;
+            margin: 10px 40px 0 0;
         }
 
             .lifeline h3 {
@@ -197,6 +207,7 @@
             /*width: 480px;*/
             width: 440px;
             margin-right: 40px;
+            margin-bottom: 20px;
             float: left;
         }
 
@@ -221,6 +232,11 @@
         .congrats {
             font-weight: bold;
             color: #E74C3C;
+        }
+
+        .ui-widget-content {
+            font-size: .85em;
+            line-height:1.15em;
         }
 
        #zoom {
@@ -287,8 +303,7 @@
             </div>
 
             <div id="playGame" runat="server" visible="false">
-                <div>
-                    <div id="scoreboard">
+               <div id="scoreboard">
                         <table>
                             <tr>
                                 <th class="answerValue">Answer Value</th>
@@ -304,6 +319,7 @@
                             <asp:Button ID="btnNewGame" Text="New Game" OnClick="NewGame_Click" runat="server" OnClientClick="return confirmation();" />
                         </div>
                     </div>
+               <div id="playLeft">
                     <div class="clear"></div>
                     <div class="destText">
                         <h2 class="destination>">
@@ -313,11 +329,8 @@
                             <asp:Label ID="destDescription" runat="server" Text=""></asp:Label>
                         </h3>
                     </div>
-                    <div class="destImg">
-                        <asp:Literal ID="destImg" runat="server" Text=""></asp:Literal>
-                    </div>
                     <div class="clear"></div>
-                    <div id="selected-state">Is in what country? <span></span></div>
+                    <div id="selected-state">Is in what country?</div>
                     <div id="letterKeys">
                         <span onclick="$('#txtCountry').autocomplete('search', 'a');">A</span> 
                         <span onclick="$('#txtCountry').autocomplete('search', 'b');">B</span> 
@@ -347,9 +360,14 @@
                         <span onclick="$('#txtCountry').autocomplete('search', 'z');">Z</span> 
                     </div>
                     Country Name:
-                <asp:TextBox ID="txtCountry" runat="server" OnTextChanged="AnswerButton_Click"></asp:TextBox>
+                    <asp:TextBox ID="txtCountry" runat="server" OnTextChanged="AnswerButton_Click"></asp:TextBox>
                 </div>
-                <asp:Panel ID="pnlLifeline" CssClass="lifeline" runat="server">
+                <div id="playRight">
+                    <div class="destImg">
+                        <asp:Literal ID="destImg" runat="server" Text=""></asp:Literal>
+                    </div>
+                    <div class="clear"></div>
+                    <asp:Panel ID="pnlLifeline" CssClass="lifeline" runat="server">
                     <div id="playButtons">
                         <asp:Button ID="btnLifeline" Text="Lifeline" OnClick="Lifeline_Click" runat="server" />
                         <asp:Button ID="btnNext" Text="Next" OnClick="NextButton_Click" runat="server" />
@@ -363,6 +381,7 @@
                         <asp:Label ID="lblResult" runat="server" Text=""></asp:Label>
                     </h4>
                 </asp:Panel>
+                </div>
             </div>
             <div id="zoom" title="<%=zoomTitle %>">
                 <p>
