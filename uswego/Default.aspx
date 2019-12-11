@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>USWego &mdash; The U.S. Geography Game | Identify the State</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <link rel="stylesheet" href="js/jquery-ui.css" />
     <style type="text/css">
         body {
