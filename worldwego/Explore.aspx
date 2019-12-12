@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>WorldWego Explorer</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <link rel="stylesheet" href="/geobee/js/jquery-ui-1.12.1/jquery-ui.css" />
     <style type="text/css">
         body {
