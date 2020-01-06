@@ -66,7 +66,7 @@
             color: red;
         }
 
-        .flag, .shape, .locator, .map {
+        .flag, .shape, .locator, .map, .stamp {
             margin: auto;
             display: block;
             clear: both;
@@ -75,6 +75,14 @@
         .lifeline .flag, .lifeline .locator, .lifeline .map {
             max-height: 297px;
             max-width: 420px;
+        }
+
+        .initial {
+            font-size: 108px;
+            font-weight: bold;
+            margin: 64px auto;
+            display: table;
+            color: crimson;
         }
 
         .datum {
@@ -86,6 +94,17 @@
             background-color: white;
         }
         .shapeContainer .shape {
+            max-height: 297px;
+            max-width: 420px;
+            margin: auto;
+            display: block;
+        }
+
+        .stampContainer {
+            clear: both;
+            background-color: white;
+        }
+        .stampContainer .stamp {
             max-height: 297px;
             max-width: 420px;
             margin: auto;

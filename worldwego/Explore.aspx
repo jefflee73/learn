@@ -72,7 +72,7 @@
             color: red;
         }
 
-        .flag, .shape, .locator, .map {
+        .flag, .shape, .locator, .map, .stamp {
             margin: auto;
             display: block;
             clear: both;
@@ -81,6 +81,14 @@
         .lifeline .flag, .lifeline .locator, .lifeline .map {
             max-height: 400px;
             max-width: 620px;
+        }
+
+        .initial {
+            font-size: 108px;
+            font-weight: bold;
+            margin: 64px auto;
+            display: table;
+            color: crimson;
         }
 
         .datum {
@@ -92,12 +100,23 @@
             background-color: white;
         }
 
-            .shapeContainer .shape {
-                max-height: 297px;
-                max-width: 420px;
-                margin: auto;
-                display: block;
-            }
+        .shapeContainer .shape {
+            max-height: 297px;
+            max-width: 420px;
+            margin: auto;
+            display: block;
+        }
+
+        .stampContainer {
+            clear: both;
+            background-color: white;
+        }
+        .stampContainer .stamp {
+            max-height: 297px;
+            max-width: 420px;
+            margin: auto;
+            display: block;
+        }
 
         .waterwaysContainer .waterways {
             max-height: 400px;
@@ -519,6 +538,8 @@
                         <asp:ListItem Value="14">Resources</asp:ListItem>
                         <asp:ListItem Value="15">National capital</asp:ListItem>
                         <asp:ListItem Value="16">Neighboring countries</asp:ListItem>
+                        <asp:ListItem Value="17">Country stamp</asp:ListItem>
+                        <asp:ListItem Value="18">Country initial</asp:ListItem>
                         <asp:ListItem Value="101">Destination 1</asp:ListItem>
                         <asp:ListItem Value="102">Destination 2</asp:ListItem>
                         <asp:ListItem Value="103">Destination 3</asp:ListItem>

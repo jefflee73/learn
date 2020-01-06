@@ -8,7 +8,7 @@ using System.Web.UI;
 public partial class worldwego_Explore : System.Web.UI.Page
 {
     protected int stateCount = 197;
-    protected int lifelineCount = 16;
+    protected int lifelineCount = 18;
     protected int destinationCount = 12;
     public string zoomTitle;
 
@@ -189,7 +189,7 @@ public partial class worldwego_Explore : System.Web.UI.Page
                 llicon.ImageUrl = "images/icons/shape.png";
                 llicon.AlternateText = "Country Shape";
                 llicon.ToolTip = "Country Shape";
-                zoomTitle = "Country Locator Map";
+                zoomTitle = "Country Shape";
                 litZoom.Text = "<img class=\"shape\" src=\"images/shape/" + drData["a2"].ToString() + ".jpg\" alt=\"Country Shape\" title=\"Country Shape\" >";
                 ScriptManager.RegisterClientScriptBlock(this, GetType(), "zoomBox", "zoomBox()", true);
                 break;
@@ -234,6 +234,23 @@ public partial class worldwego_Explore : System.Web.UI.Page
                 llicon.ImageUrl = "images/icons/neighbors.png";
                 llicon.AlternateText = "Neighboring countries";
                 llicon.ToolTip = "Neighboring countries";
+                break;
+            case 17:     //stamp
+                strImage = "<div class=\"stampContainer\"><img class=\"stamp\" src=\"images/stamp/" + drData["a2"].ToString() + ".jpg\" alt=\"Country Stamp\" title=\"Country Stamp\" onclick=\"zoomBox()\"></div>";
+                litLifeline.Text = strImage;
+                llicon.ImageUrl = "images/icons/stamp.png";
+                llicon.AlternateText = "Country Stamp";
+                llicon.ToolTip = "Country Stamp";
+                zoomTitle = "Country Stamp";
+                litZoom.Text = "<img class=\"stamp\" src=\"images/stamp/" + drData["a2"].ToString() + ".jpg\" alt=\"Country Stamp\" title=\"Country Stamp\" >";
+                ScriptManager.RegisterClientScriptBlock(this, GetType(), "zoomBox", "zoomBox()", true);
+                break;
+            case 18:     //initial
+                litLifeline.Text = "<h3 class='neighbors'>The first letter of the country name is</h3>";
+                litLifeline.Text += "<span class=\"initial\">" + char.ToUpper(drData["country"].ToString()[0]) + "</span>";
+                llicon.ImageUrl = "images/icons/initial.png";
+                llicon.AlternateText = "Country initial";
+                llicon.ToolTip = "Country initial";
                 break;
             default:
                 if (lifelineType > 100 && lifelineType <= 100 + destinationCount)
